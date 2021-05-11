@@ -1,10 +1,12 @@
 import React from "react";
-import Example from './components/Example'
+import Example from "./components/Example";
+import TodoList from './components/TodoList'
 
 function App() {
   return (
     <React.Fragment>
-      <Example/>
+      {/* <Example /> */}
+      <TodoList/>
     </React.Fragment>
   );
 }
