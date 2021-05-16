@@ -17,7 +17,7 @@ function TodoItemCreator() {
       {
         id: getId(),
         text: inputValue,
-        isCompolete: false,
+        isComplete: false,
       },
     ]);
     setInputValue("");

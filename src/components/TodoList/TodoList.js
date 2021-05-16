@@ -1,16 +1,18 @@
 import React from "react";
 import { useRecoilValue, RecoilRoot } from "recoil";
-import { todoListState } from "./TodoState";
+import { filteredTodoListState } from "./TodoState";
 import TodoItemCreator from "./TodoItemCreator";
 import TodoItem from "./TodoItem";
+import TodoListFilters from "./TodoListFilters";
+import TodoListStats from "./TodoListStats";
 
 function TodoList() {
-  const todoList = useRecoilValue(todoListState);
+  const todoList = useRecoilValue(filteredTodoListState);
 
   return (
     <React.Fragment>
-      {/* <TodoListStats/> */}
-      {/* <TodoListFilters/> */}
+      <TodoListStats />
+      <TodoListFilters />
       <TodoItemCreator />
       {todoList.map((todoItem) => (
         <TodoItem key={todoItem.id} item={todoItem} />
@@ -24,7 +26,7 @@ function TodoListWrapper() {
     <RecoilRoot>
       <TodoList />
     </RecoilRoot>
-  )
+  );
 }
 
 export default TodoListWrapper;
